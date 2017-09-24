@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :user_badges, only: [:index, :show] do
       resources :user_objectives, only: [:create]
     end
+  resources :badges, only: [:index, :new, :show]
 end

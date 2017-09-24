@@ -1,0 +1,30 @@
+<div class="container-fluid" id="userbadge-index">
+  <div class="row" id="header-background">
+    <div class="col-12 mb-5" style="z-index: 2;">
+      <%= link_to user_badges_path, style: "text-decoration: none; color: white;" do %>
+        <h1 id="title">RIBERAQUEST</h1>
+        <p>Liste des badges disponibles</p>
+      <% end %>
+    </div>
+    <div class="col-12 text-right" style="margin-top: -150px; margin-left: 15vh; height: 140px; z-index: 1;">
+      <%= image_tag "favicon.png", height: "150%", id: "medal" %>
+    </div>
+  </div>
+
+  <div class="row" id="badges-cards" style="z-index: 2;">
+    <% @badges.each do |badge| %>
+      <div class="col-12 d-flex mb-2 justify-content-between badge-card">
+        <div class="d-flex flex-column justify-content-end mb-3">
+          <p class="badge-card-name"><%= badge.name %></p>
+        </div>
+        <div class="badge-card-image-container">
+          <%= image_tag "#{badge.icon_name}", height: "80px;" %>
+        </div>
+        <%= link_to "", badge_path(badge), class: "badge-card-show-link" %>
+      </div>
+    <% end %>
+    <div class="col-12 d-flex align-items-center justify-content-center badge-card" id="badge-new">
+        <p id="plus">+</p>
+      <%= link_to "", new_badge_path, class: "badge-card-show-link" %>
+  </div>
+</div>

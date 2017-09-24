@@ -1,0 +1,59 @@
+<div class="container-fluid" id="userbadgeshow">
+  <div class="row" id="header-background">
+    <div class="col-7 mb-5">
+      <%= link_to :back do %>
+        <%= image_tag "chevronleft.svg", height: "20px;", class: "mt-4", id: "badge-image" %>
+      <% end %>
+      <h1 id="title"><%= @badge.name %></h1>
+      <p>Objectifs :</p>
+    </div>
+    <div class="col-5">
+      <%= image_tag @badge.icon_name, height: "100%" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <% @badge.objectives.each do |objective| %>
+        <div class="d-flex mt-3 mb-1 justify-content-between">
+          <div class="d-flex flex-column justify-content-end">
+            <p class=""><%= objective.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+      </div>
+      <div class="modal-body">
+        <div class="modal-icon">
+        <div class="badge-icon-container d-flex align-items-center justify-content-center" >
+          <svg width="80" height="80">
+              <defs>
+                  <clipPath id="circleView">
+                    <circle cx="40" cy="40" r="40" fill="#FFFFFF" />
+                  </clipPath>
+              </defs>
+            <image width="80" height="80" xlink:href="<%= image_url @badge.icon_name %>" clip-path="url(#circleView)" transform="scale(-1, -1) translate(-80, -80)" />
+          </svg>
+        </div>
+
+        </div>
+        <h3 class='text-center'>
+          Félicitations !
+          Vous venez de débloquer le badge : <%= @badge.name %>
+        </h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-modal" data-dismiss="modal">Ajouter ce badge !</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <%= simple_form_for(:badgeobjectives) do |f| %>
+      <div class="col-12">
+        <%= f.input :name %>
+
+        <%= f.input :objective1 %>
+        <%= f.label :objectivedescription1 %>
+        <%= f.text_area :objectivedescription1 %>
+
+        <%= f.input :objective2 %>
+        <%= f.label :objectivedescription1 %>
+        <%= f.text_area :objectivedescription2 %>
+
+        <%= f.input :objective3 %>
+        <%= f.label :objectivedescription1 %>
+        <%= f.text_area :objectivedescription1 %>
+
+        <%= f.input :objective4 %>
+        <%= f.label :objectivedescription1 %>
+        <%= f.text_area :objectivedescription1 %>
+
+        <%= f.input :objective5 %>
+        <%= f.label :objectivedescription1 %>
+        <%= f.text_area :objectivedescription1 %>
+      </div>
+    <% end %>
+  </div>
+</div>
