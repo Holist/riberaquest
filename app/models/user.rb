@@ -16,7 +16,7 @@ class User < ApplicationRecord
   end
 
   def add_badges
-    Badge.all.each do |badge|
+    Badge.selected_for_start.each do |badge|
       UserBadge.create!(user: self, badge: badge)
     end
   end
